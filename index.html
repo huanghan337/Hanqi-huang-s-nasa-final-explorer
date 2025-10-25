@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NASA Space Explorer — APOD Feed</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>NASA Space Explorer</h1>
+    <p class="subtitle">A version that uses the classroom APOD JSON feed.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label>Start date: <input id="startDate" type="date" /></label>
+      <label>End date: <input id="endDate" type="date" /></label>
+      <button id="fetchBtn">Fetch APODs</button>
+    </section>
+
+    <aside class="fact-box" id="factBox">Did you know? Loading fact...</aside>
+
+    <section id="gallery" class="gallery" aria-live="polite"></section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalClose" class="close-btn" aria-label="Close">&times;</button>
+      <div id="modalMedia" class="modal-media"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDate" class="muted"></p>
+      <p id="modalExplanation"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made for class — APOD gallery demo.</p>
+  </footer>
+
+  <script>
+    window.APOD_FEED_URL = "' + $feed + '";
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
